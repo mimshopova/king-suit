@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <div class="profile">
+
+        <!-- Start Profile Personal Data Section -->
+        <div class="profile-data">
+            <div class="profile_img">
+                <div class="image">
+
+                    <!-- Profile Image -->
+                    {% if object.photo %}
+                        <img src="/media/{{ object.photo }}" alt="photo of {{ object.username }}" width="200" height="200">
+                    {% else %}
+                        <img src="{% static 'images/person.png' %}" alt="img8">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="personal">
+                <div class="edit">
+                    <!-- User Username -->
+                    <p>{{ object.username }}</p>
+
+                    <!-- IF the viewer is the owner of the profile -->
+                    <!-- Link to Edit Profile Page -->
+                    {% if is_owner %}
+                        <a href="{% url 'edit user' pk=object.pk %}">
+                            <button>Edit</button>
+                        </a>
+
+
+                        <!-- Link to Delete Profile Page -->
+                        <a href="{% url 'delete user' pk=object.pk %}">
+                            <button>Delete</button>
+                        </a>
+                        <!-- End IF the viewer is the owner of the profile -->
+                    {% endif %}
+
+                    <!-- User First and Last Name IF Added -->
+                    {% if object.get_full_name %}
+                        <h3 class="names">Names: {{ object.get_full_name }}</h3>
+                    {% endif %}
+
+                    <!-- User Email Address -->
+                    <p class="email">Email: {{ object.email }}</p>
+
+                    <!-- User Gender IF Added -->
+                    {% if object.gender %}
+                        <p class="gender">Gender: {{ object.gender }}</p>
+                    {% endif %}
+
+                </div>
+                <div class="data">
+
+                    <!-- Total Number of Comments -->
+                    <span>Number of Comments</span>
+                    <p>{{ comments_count }}</p>
+                    <span>My Comments</span>
+                    {% for comment in comments %}
+                        <p>
+                        <div class="form-group mt-3">
+                            {{ comment.title }}
+                        </div>
+
+                        <div class="form-group mt-3">
+                            {% if comment.photo %}
+                             <img src="{{ comment.photo.url }}" width="500" height="500">
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group mt-3">
+                            {{ comment.content }}
+                        </div>
+                        <a href="{% url 'edit comment' pk=comment.pk %}">
+                            <button>Edit</button>
+                            <a href="{% url 'delete comment' pk=comment.pk %}">
+                                <button>Delete</button>
+                            </a>
+                        </a>
+                        </p>
+                    {% empty %}
+                       <p>No comments!</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- End Profile Personal Data Section -->
+    </div>
+{% endblock %}

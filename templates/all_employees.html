@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <h1>Our team</h1>
+    <ul>
+    {% for employee in employees %}
+        <h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
+        <p class="img"><img src="/media/{{ employee.photo }}" width="400" height="400"></p>
+            <a href="{% url 'details employee' pk=employee.pk %}" class="btn-get-started">Details</a>
+{#            <a class="'button" href="{% url 'details employee' pk=employee.pk %}">Details</a>#}
+    {% empty %}
+        No employees!
+    {% endfor %}
+    </ul>
+    <div>
+    {% if has_rights %}
+        <a href="{% url 'create employee' %}" class="btn-get-started">Create Employee</a>
+{#        <a class="'button" href="{% url 'create employee' %}">Create</a>#}
+    {% endif %}
+    </div>
+{% endblock %}

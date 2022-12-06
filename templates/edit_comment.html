@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%  block page_content %}
+    {% if is_owner %}
+        <h1>Edit Comment</h1>
+        <form method="post" action="{% url 'edit comment' pk=pk %}" enctype="multipart/form-data">
+        {{ form.as_p }}
+        <button>Edit</button>
+        {% csrf_token %}
+        </form>
+    {% endif %}
+{% endblock %}

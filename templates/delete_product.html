@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    {% if has_rights %}
+        <form method="post" action="{% url 'delete product' pk=pk %}">
+            {{ form.as_p }}
+
+            <button>Delete!</button>
+            {% csrf_token %}
+        </form>
+    {% endif %}
+{% endblock %}

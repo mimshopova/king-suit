@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_content %}
+
+    <h2>We are KING SUIT men fashion</h2>
+    <p>Welcome to kingdom of suits!</p>
+    <p>We have suit for your special moments!</p>
+    <img src="{% static 'assets/img/ks_logo.png' %}" alt="KS logo">
+    {% if has_rights %}
+        <a href="{% url 'create article' %}" class="btn-get-started">Create Article</a>
+        <a href="{% url 'create product' %}" class="btn-get-started">Create Product</a>
+        <a href="{% url 'create department' %}" class="btn-get-started">Create Department</a>
+        <a href="{% url 'create employee' %}" class="btn-get-started">Create Employee</a>
+    {% endif %}
+
+
+    <section id="gallery" class="gallery">
+        <div class="container-fluid">
+
+            <div class="row gy-4 justify-content-center">
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/20221108_200118.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/20221108_200118.jpg' %}" title="Grey suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/20221108_200152.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/20221108_200152.jpg' %}" title="Blue suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/20221108_200204.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/20221108_200204.jpg' %}" title="Grey business suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667929186451.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667929186451.jpg' %}" title="Ceremonial suits"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667929254689.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667929254689.jpg' %}" title="Ceremonial suits 2"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667929759059.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667929759059.jpg' %}" title="Funny vision suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667929904060.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667929904060.jpg' %}" title="Party suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667930006707.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667930006707.jpg' %}" title="Dark blue suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667930039641.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667930039641.jpg' %}" title="Dark grey suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667930050815.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667930050815.jpg' %}" title="Youth vision suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667929704253.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667929704253.jpg' %}" title="Youth vision suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="gallery-item h-100">
+                        <img src="{% static 'images/FB_IMG_1667929727271.jpg' %}" class="img-fluid" alt="">
+                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="{% static 'images/FB_IMG_1667929727271.jpg' %}" title="Youth vision suit"
+                               class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                    </div>
+                </div><!-- End Gallery Item -->
+
+            </div>
+
+        </div>
+    </section><!-- End Gallery Section -->
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<h1>Departments</h1>
+    {% for department in departments %}
+        <h2>{{ department.name }}</h2>
+            {% if has_rights %}
+                <a href="{% url 'edit department' pk=department.pk %}" class="btn-get-started">Edit</a>
+                <a href="{% url 'delete department' pk=department.pk %}" class="btn-get-started">Delete</a>
+{#                <a class="'button" href="{% url 'edit department' pk=department.pk %}">Edit</a>#}
+{#                <a class="'button" href="{% url 'delete department' pk=department.pk %}">Delete</a>#}
+            {% endif %}
+
+    {% empty %}
+        No departments!
+    {% endfor %}
+    <div>
+    <p>
+    {% if has_rights %}
+        <a href="{% url 'create department' %}" class="btn-get-started">Create Department</a>
+{#        <a class="'button" href="{% url 'create department' %}">Create</a>#}
+    {% endif %}
+    </p>
+    </div>
+{% endblock %}

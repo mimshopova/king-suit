@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <h1>Products</h1>
+    <ul class="my-products-list">
+    {% for product in products %}
+        <p>
+        <div class="form-group mt-3">
+            <h2>{{ product.name }}</h2>
+        </div>
+
+        <div class="form-group mt-3">
+            <p class="img"><img src="/media/{{ product.photo }}" alt="" width="800"></p>
+            <a href="{% url 'details product' pk=product.pk %}" class="btn-get-started">Details</a>
+        </div>
+
+        </ul>
+
+    {% empty %}
+        No products!
+    {% endfor %}
+    <div>
+        {% if has_rights %}
+            <p>
+            <a href="{% url 'create product' %}" class="btn-get-started">Create Product</a>
+            {#        <a class="'button" href="{% url 'create product' %}">Create</a>#}
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

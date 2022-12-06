@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%  block page_content %}
+    {% if has_rights %}
+        <h1>Edit Department</h1>
+        <form method="post" action="{% url 'edit department' pk=pk %}">
+        {{ form.as_p }}
+        <button>Edit</button>
+        {% csrf_token %}
+        </form>
+    {% endif %}
+{% endblock %}

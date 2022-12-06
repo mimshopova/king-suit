@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <style>
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: #f9f9fa;
+        }
+
+        p {
+            text-indent: 50px;
+            text-align: left;
+            letter-spacing: 3px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        img {
+            max-width: 500px;
+        }
+
+        .image {
+            flex-basis: 100%;
+        }
+
+        .text {
+            font-size: 20px;
+            padding-left: 20px;
+        }
+
+    </style>
+
+    <div class="container">
+        <div class="image">
+            <img src="{% static 'images/blue_suit.jpg' %}" alt="KS Logo">
+        </div>
+        <div class="text">
+            <h1>About Us</h1>
+            <p>
+                There is a large selection of suits, shirts, ties, bow ties, belts, and shoes in our stores.
+                With this in mind, we work hard to fulfill all of your requests and suggestions for the upcoming event.
+                Our edge over competing companies is the wide selection of colors, models, and cuts for every man.
+                The truth is that everyone appreciates attractive individuals who know how to groom themselves and
+                present themselves well.
+                This is why investing in a high-quality, designer men's suit will benefit your overall appearance and
+                sense of style.
+                We provide good quality at competitive pricing because of this. The materials are either viscose and
+                wool or 100% cold wool.
+                Our models follow the current season's global fashion trends, which include checks, dots, and fabrics
+                with structural patterns.
+                Only in stores will you find the full range of graduation attire and accessories.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <img src="{% static 'images/grey_suit.jpg' %}" alt="KS Logo">
+        </div>
+        <div class="text">
+            <h1>History</h1>
+            <p>
+                "King Suit" is a brand that was founded 13 years ago.
+                We first introduced the western fashion of fitted suits in 2008, when baggy suits were still popular.
+                That is why we chose the motto "Always a step ahead of the competition." to describe ourselves.
+                Every year, the company's team works hard to present new and stylish trends that will make you stand
+                out.
+                We create our own models for you that you will not find in other stores. They are created with taste and
+                quality in mind.
+                We are proud that one of our previous models was also sewn for the global market by large factories and
+                was a success.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <img src="{% static 'images/suits (1).jpg' %}" alt="KS Logo">
+        </div>
+        <div class="text">
+            <h1>Philosophy</h1>
+            <p>
+                The "King Suit" philosophy is impeccable stitching and a rich color palette, so our collections are a
+                mix of color contrasts in sports and formal styles.
+                We offer you a modern approach to dressing with them.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <img src="{% static 'images/black suit.jpg' %}" alt="KS Logo">
+        </div>
+        <div class="text">
+            <h1>Why us?</h1>
+            <p>
+                We offer discounts on complete suits, shirts, ties or bow ties, belts, and shoes.
+                We have two stores in Plovdiv with over 200 different suit models.
+                Aside from our official collection, we also have a sporty-elegant one for graduation parties, wedding
+                guests, various events, or just everyday wear.
+                High-quality items at reasonable prices for all current and prospective customers.
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
+

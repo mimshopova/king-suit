@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+    <h1>Contacts</h1>
+    <p>King Suit</p>
+    <p>11 Vasil Levski str</p>
+    <p>4000 Plovdiv</p>
+    <p>kingsuit@example.com</p>
+    <p>0888******</p>
+
+    {% if request.user.is_authenticated %}
+        <h1>Leave us feedback!</h1>
+        <a href="{% url 'create comment' %}" class="btn-get-started">Create Comment</a>
+    {% endif %}
+
+    {% if request.user.is_authenticated %}
+        {% for comment in comments %}
+            <p>
+            <div class="form-group mt-3">
+                {{ comment.title }}
+            </div>
+
+            <div class="form-group mt-3">
+                {% if comment.photo %}
+                <img src="{{ comment.photo.url }}" width="500" height="400">
+                {% endif %}
+            </div>
+
+            <div class="form-group mt-3">
+                {{ comment.content }}
+            </div>
+            </p>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

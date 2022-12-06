@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{%  block page_content %}
+    {% if has_rights %}
+        <form method="post" action="{% url 'edit employee' pk=employee.pk %}" enctype="multipart/form-data">
+        {{ form.as_p }}
+        <button>Edit</button>
+        {% csrf_token %}
+        </form>
+    {% endif %}
+{% endblock %}

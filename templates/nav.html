@@ -1,0 +1,35 @@
+{% load static %}
+
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center  me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="{% static 'assets/img/ks_logo.png' %}" alt="">
+        <h1>King Suit</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}" class="active">Home</a></li>
+          <li><a href="{% url 'about us' %}">About us</a></li>
+          <li><a href="{% url 'contacts' %}">Contacts</a></li>
+          {% if request.user.is_authenticated %}
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'articles' %}">Articles</a></li>
+            <li><a href="{% url 'employees' %}">Team</a></li>
+            <li><a href="{% url 'details user' pk=request.user.pk %}">Profile</a></li>
+            <li><a href="{% url 'logout user' %}">Log Out</a></li>
+          {% else %}
+            <li><a href="{% url 'register user' %}">Register</a></li>
+            <li><a href="{% url 'login user' %}">Log In</a></li>
+          {% endif %}
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->

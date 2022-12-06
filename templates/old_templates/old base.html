@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    footer{
+    margin-bottom: auto;
+}
+</style>
+
+<!-- Starts Head Section -->
+<head>
+    <link rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.jpg' %}">
+    <title>King Suit</title>
+</head>
+<!-- End Head Section -->
+
+<!-- Starts Body Section -->
+<body>
+
+<!-- Starts Header Section with Navigation Bar -->
+<header>
+    {% include 'nav.html' %}
+</header>
+<!-- End Header Section with Navigation Bar -->
+
+<!-- Starts Main Section -->
+<main>
+    {% block page_content %}
+    {% endblock %}
+</main>
+<!-- End Main Section -->
+
+<!-- Start Footer Section -->
+
+<footer>
+    <div class="footer">
+            <span class="footer-section">
+                © 2022 SOFTUNI MIMA SHOPOVA FINAL PROJECT FOR PYTHON WEB FRAMEWORK
+            </span>
+    </div>
+</footer>
+<!-- End Footer Section -->
+
+</body>
+</html>

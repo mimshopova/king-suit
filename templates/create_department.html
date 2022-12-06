@@ -1,0 +1,15 @@
+{%  extends 'base.html' %}
+{% block page_content %}
+{% if has_rights %}
+        <h1>Create Department</h1>
+    <form method="post" action="{% url 'create department' %}">
+    {{ form.as_p }}
+    <button>Create</button>
+    {% csrf_token %}
+    </form>
+    {% else %}
+        Sorry, staff only on this page.
+        <a href="{% url 'index' %}" class="btn-get-started">Home Page</a>
+{#        <a class="'button" href="{% url 'index' %}">Home Page</a>#}
+    {% endif %}
+{% endblock %}

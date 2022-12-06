@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block page_content %}
+<style>
+    h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fcf9f9;
+}
+
+p {
+  text-indent: 50px;
+  text-align: left;
+  letter-spacing: 3px;
+}
+
+.container {
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+    img {
+        max-width: 500px;
+      }
+
+      .image {
+        flex-basis: 100%;
+      }
+      .text {
+        font-size: 20px;
+        padding-left: 20px;
+      }
+
+</style>
+
+    <div class="container">
+    <div class="image">
+        <img src="/media/{{ employee.photo }}" alt="photo of {{ employee.first_name }}">
+      </div>
+    <div class="text">
+    <h1>{{ employee.first_name }} {{ employee.last_name }}</h1>
+    <p>Age: {{ employee.age }}</p>
+    <p>Hobby: {{ employee.hobby }}</p>
+    <p>Position: {{ employee.position }}</p>
+    <p>Department: {{ employee.department }}</p>
+    </div>
+    </div>
+
+    {% if has_rights %}
+        <a href="{% url 'edit employee' pk=employee.pk %}" class="btn-get-started">Edit</a>
+        <a href="{% url 'delete employee' pk=employee.pk %}" class="btn-get-started">Delete</a>
+
+{#        <a class="'button" href="{% url 'edit employee' pk=employee.pk %}">Edit</a>#}
+{#        <a class="'button" href="{% url 'delete employee' pk=employee.pk %}">Delete</a>#}
+    {% endif %}
+{% endblock %}

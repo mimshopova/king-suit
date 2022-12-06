@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <div class="login-register-div">
+        <div class="login-register-box">
+            <h1>King Suit</h1>
+
+            <div class="row justify-content-center mt-4">
+            <div class="col-lg-9">
+                <!-- Start Register Form -->
+                <form method="post" action="{% url 'register user' %}">
+                    {% csrf_token %}
+                    {#                {{ form.as_p }}#}
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            Username: {{ form.username }}
+                        </div>
+
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            Email: {{ form.email }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            Password: {{ form.password1 }}
+                        </div>
+
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            Repeat password: {{ form.password2 }}
+                        </div>
+                    </div>
+
+                    <!-- Register Button -->
+                    <button type="submit">Register</button>
+
+                </form>
+                <!-- End Register Form -->
+
+            </div>
+            <div class="second-option">
+
+                <!-- Link to Login Page -->
+                <p>Have an account? <a href="{% url 'login user' %}">Log in</a></p>
+            </div>
+        </div>
+        <!-- End Register Section -->
+        </div>
+    </div>
+
+{% endblock %}
