@@ -8,8 +8,10 @@
     <p>We have suit for your special moments!</p>
     <img src="{% static 'assets/img/ks_logo.png' %}" alt="KS logo">
     {% if has_rights %}
+        <p></p>
         <a href="{% url 'create article' %}" class="btn-get-started">Create Article</a>
         <a href="{% url 'create product' %}" class="btn-get-started">Create Product</a>
+        <p></p>
         <a href="{% url 'create department' %}" class="btn-get-started">Create Department</a>
         <a href="{% url 'create employee' %}" class="btn-get-started">Create Employee</a>
     {% endif %}

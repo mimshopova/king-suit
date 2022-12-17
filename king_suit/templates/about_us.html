@@ -1,44 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block page_content %}
-    <style>
-        h1 {
-            text-align: center;
-            text-transform: uppercase;
-            color: #f9f9fa;
-        }
-
-        p {
-            text-indent: 50px;
-            text-align: left;
-            letter-spacing: 3px;
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        img {
-            max-width: 500px;
-        }
-
-        .image {
-            flex-basis: 100%;
-        }
-
-        .text {
-            font-size: 20px;
-            padding-left: 20px;
-        }
-
-    </style>
 
     <div class="container">
-        <div class="image">
-            <img src="{% static 'images/blue_suit.jpg' %}" alt="KS Logo">
-        </div>
+
         <div class="text">
             <h1>About Us</h1>
             <p>
@@ -56,12 +21,15 @@
                 Only in stores will you find the full range of graduation attire and accessories.
             </p>
         </div>
+        <div class="image">
+            <img src="{% static 'images/blue_suit.jpg' %}" alt="Blue suit" width="800">
+        </div>
     </div>
 
+<p></p>
+
     <div class="container">
-        <div class="image">
-            <img src="{% static 'images/grey_suit.jpg' %}" alt="KS Logo">
-        </div>
+
         <div class="text">
             <h1>History</h1>
             <p>
@@ -76,12 +44,15 @@
                 was a success.
             </p>
         </div>
+        <div class="image">
+            <img src="{% static 'images/grey_suit.jpg' %}" alt="Grey suit" width="800">
+        </div>
     </div>
 
+<p></p>
+
     <div class="container">
-        <div class="image">
-            <img src="{% static 'images/suits (1).jpg' %}" alt="KS Logo">
-        </div>
+
         <div class="text">
             <h1>Philosophy</h1>
             <p>
@@ -90,12 +61,15 @@
                 We offer you a modern approach to dressing with them.
             </p>
         </div>
+        <div class="image">
+            <img src="{% static 'images/suits (1).jpg' %}" alt="Suit" width="800">
+        </div>
     </div>
 
+<p></p>
+
     <div class="container">
-        <div class="image">
-            <img src="{% static 'images/black suit.jpg' %}" alt="KS Logo">
-        </div>
+
         <div class="text">
             <h1>Why us?</h1>
             <p>
@@ -105,6 +79,9 @@
                 guests, various events, or just everyday wear.
                 High-quality items at reasonable prices for all current and prospective customers.
             </p>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/black suit.jpg' %}" alt="Black suit" width="800">
         </div>
     </div>
 

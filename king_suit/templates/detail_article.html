@@ -1,49 +1,19 @@
 {% extends 'base.html' %}
 {% block page_content %}
-<style>
-    h1 {
-  text-align: center;
-  text-transform: uppercase;
-  color: #fdfdfd;
-}
 
-p {
-  text-indent: 50px;
-  text-align: left;
-  letter-spacing: 3px;
-}
-
-.container {
-        display: flex;
-        align-items: center;
-        justify-content: center
-      }
-    img {
-        max-width: 500px;
-      }
-
-      .image {
-        flex-basis: 100%;
-      }
-      .text {
-        font-size: 20px;
-        padding-left: 20px;
-      }
-
-</style>
 
     <div class="container">
-    <div class="image">
-        {% if article.photo %}
-        <img src="/media/{{ article.photo }}" alt="photo of {{ article.title }}">
-        {% endif %}
-      </div>
     <div class="text">
     <h1>{{ article.title }}</h1>
     <p>
         {{ article.content }}
     </p>
     </div>
+    <div class="image">
+        {% if article.photo %}
+        <img src="/media/{{ article.photo }}" alt="photo of {{ article.title }}">
+        {% endif %}
+      </div>
     </div>
 
     {% if has_rights %}
